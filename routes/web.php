@@ -19,7 +19,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/role',[RoleController::class,'add']);
+Route::get('/add-role', function () {
+    return view('add_role');
+});
+
+
+Route::post('/role',[RoleController::class,'add']);
 Route::get('/user',[UserController::class,'add']);
 Route::get('/get-user/{id}',[UserController::class,'get']);
 
