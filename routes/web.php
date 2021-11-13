@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\RoleController;
+use App\Http\Controllers\Admin\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,8 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('users', function () {
-    return view('users');
-    // return view('welcome');
-
+Route::get('/', function () {
+    return view('welcome');
 });
+
+Route::get('/role',[RoleController::class,'add']);
+Route::get('/user',[UserController::class,'add']);
+Route::get('/get-user/{id}',[UserController::class,'get']);
+
